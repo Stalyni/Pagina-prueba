@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Chilean Clique</title>
+</head>
+<body>
+    <header id="navbar">
+        <nav class="navbar">
+            <div class="menu-toggle" onclick="toggleMenu()">
+                ☰
+            </div>
+            <ul id="nav-links">
+                <li><a href="#seccion2">Calendario</a></li>
+                <li><a href="#seccion3">Fan Art</a></li>
+                <li><a href="#seccion4">¿Quiénes somos?</a></li>
+                <li><a href="#eventos-giras">Eventos</a></li>
+            </ul>
+        </nav>
+    </header>
+        
+
+    <main>
+              
+       <!-- Calendario y Actividad -->
+       <div class="seccion" id="seccion2">
+        <h2>Calendario de Actividades</h2>
+        <div id="calendar">
+            <div class="calendar-header">
+                <button id="prev" onclick="changeMonth(-1)">&#10094;</button>
+                <span id="monthAndYear">
+                    <input type="number" id="yearInput" min="1900" max="2100" value="2024" onchange="changeYear()">
+                </span>
+                <button id="next" onclick="changeMonth(1)">&#10095;</button>
+            </div>
+            <table id="calendarTable">
+                <thead>
+                    <tr>
+                        <th>Dom</th>
+                        <th>Lun</th>
+                        <th>Mar</th>
+                        <th>Mié</th>
+                        <th>Jue</th>
+                        <th>Vie</th>
+                        <th>Sáb</th>
+                    </tr>
+                </thead>
+                <tbody id="calendar-body"></tbody>
+            </table>
+        </div>
+    
+        <div id="calendario">
+            <input type="date" id="fecha" />
+            <input type="text" id="actividad" placeholder="Descripción de la actividad" />
+            <button onclick="agregarActividad()">Agregar Actividad</button>
+            <ul id="lista-actividades"></ul>
+        </div>
+    
+        <!-- Botón para mostrar el formulario de agregar actividad -->
+        <button id="mostrarFormularioBtn" onclick="mostrarFormulario()" style="display:none;">Agregar otra actividad</button>
+        
+        <div id="modal" class="modal" style="display:none;">
+            <div class="modal-content">
+                <span id="cerrar-modal" class="close">&times;</span>
+                <h2>Modificar o Eliminar Actividad</h2>
+                <input type="text" id="modal-actividad" />
+                <button id="guardar">Guardar Cambios</button>
+                <button id="eliminar">Eliminar</button>
+            </div>
+        </div>
+    </div>
+    
+
+  <!---------------------------------------------------------------------------------------------------------->
+        <div class="seccion" id="seccion4">
+            <h2>¿Quiénes somos?</h2>
+            <p class="lorem">Chilean Clique es un fan club dedicado a los amantes de la música y la cultura chilena. Nos enfocamos en compartir nuestra pasión y creatividad.</p>
+        </div>
+ <!---------------------------------------------------------------------------------------------------------->
+        <!-- sección de eventos -->
+        <section id="eventos-giras" class="evento-container">
+            <h2>EVENTOS Y GIRAS</h2>
+            <div class="evento">
+                <h3>NOMBRE DE EVENTO</h3>
+                <input type="text" id="nombre-evento" placeholder="Nombre del evento" />
+                <input type="datetime-local" id="fecha-gira" />
+                <button class="btn-agregar" onclick="agregarEvento()">Agregar</button>
+            </div>
+            <div class="lista-eventos" id="eventos-lista"></div>
+        </section>
+        
+        <!-- Los eventos registrados aparecerán aquí con animación -->
+        <section id="eventos-registrados" class="evento-registrado-container">
+            <h2>Eventos Registrados</h2>
+            <div id="eventos-animados">
+                
+            </div>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>Créditos: Chilean Clique</p>
+        <div class="redes-sociales">
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+            <a href="#">WhatsApp</a>
+            <a href="#">TikTok</a>
+        </div>
+    </footer>
+
+    <script src="js/index.js"></script>
+    <script src="js/eventogiras.js"></script>
+</body>
+</html>

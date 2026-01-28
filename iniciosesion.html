@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <link rel="stylesheet" href="css/iniciosesion.css">
+</head>
+<body>
+    <button id="hiddenButton" onclick="showPasswordPrompt()"></button>
+    <div id="passwordPrompt" style="display: none;">
+        <label for="password"></label> <!-- Este es el lugar donde se mostrará el texto -->
+        <input type="password" id="password">
+        <button onclick="checkPassword()">Aceptar</button>
+    </div>
+    
+    <video id="video" autoplay loop muted>
+        <source src="/VIDEO/caos.mp4" type="video/mp4">
+        Tu navegador no soporta el video.
+    </video>
+
+    <script src="js/iniciosesion.js"></script>
+</body>
+</html>
